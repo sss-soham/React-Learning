@@ -18,7 +18,7 @@ export const Card = (props) =>{
             <h1>Description : {description}</h1>
             <h1>Genre : {genre.join(", ")}</h1>
             <h1>{children}</h1>
-            <button onClick={()=>handleClick(pdata)} className="ui button" style={{border:"1px solid white"}}>Watch now</button>
+            <button onClick={()=>handleClick(pdata)} className="ui button" style={{border:"1px solid black"}}>Watch now</button>
         </li>
     )
 }
