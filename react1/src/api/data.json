@@ -1,0 +1,50 @@
+[
+    {
+      "name": "Stranger Things",
+      "url":"https://upload.wikimedia.org/wikipedia/commons/3/38/Stranger_Things_logo.png",
+      "id": "NTX12345",
+      "rating": 8.7,
+      "description": "A group of kids in a small town uncover a mystery involving secret experiments and supernatural forces.",
+      "genre": ["Sci-Fi", "Horror", "Drama"]
+    },
+    {
+      "name": "Money Heist",
+      "url":"https://lh3.googleusercontent.com/ZIyMTsfp5FAOA63fwMVzakG0-S0hw6fMcB2aroVbNPw7pzrh_30JoHfgacKTisn6o-PSz_vGv106l5hUIHLX_16Eig=s1280-w1280-h800",
+      "id": "NTX67890",
+      "rating": 8.3,
+      "description": "A criminal mastermind and his team plan the biggest heist in Spain, targeting the Royal Mint.",
+      "genre": ["Crime", "Thriller", "Drama"]
+    },
+    {
+      "name": "Breaking Bad",
+      "url":"https://preview.redd.it/bdcfkro5ytf61.jpg?width=640&crop=smart&auto=webp&s=f91584b21d743441c1b7120291365889ea4046d2",
+      "id": "NTX11223",
+      "rating": 9.5,
+      "description": "A high school chemistry teacher turned meth producer partners with a former student to secure his family's future.",
+      "genre": ["Crime", "Drama", "Thriller"]
+    },
+    {
+      "name": "The Witcher",
+      "url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYTYgbZbxvgwjn4n7J2NDz3sQ_qJDrdZKDyw&s",
+      "id": "NTX44556",
+      "rating": 8.1,
+      "description": "A monster hunter named Geralt of Rivia struggles to find his place in a world where people often prove more wicked than beasts.",
+      "genre": ["Fantasy", "Action", "Drama"]
+    },
+    {
+      "name": "Squid Game",
+      "url":"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/10/squid-game-character-guide.jpg",
+      "id": "NTX78901",
+      "rating": 8.0,
+      "description": "Hundreds of cash-strapped players accept a strange invitation to compete in deadly children's games for a tempting prize.",
+      "genre": ["Thriller", "Drama", "Survival"]
+    },
+    {
+      "name": "Game of Throne",
+      "url":"https://play-lh.googleusercontent.com/Hx3HT4bnEmXJEfNOnZnDFABPGqro9KjMb7tKU5B5A372frXuNPfNJASmby5Hjka6CYIx",
+      "id": "NTX78901",
+      "rating": 10,
+      "description": "Hundreds of cash-strapped players accept a strange invitation to compete in deadly children's games for a tempting prize.",
+      "genre": ["Thriller", "Drama", "Survival"]
+    }
+  ]
