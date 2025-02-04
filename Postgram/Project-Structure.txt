@@ -1,0 +1,60 @@
+1. Register page
+    1.1 Header
+
+    1.2 sign up page
+        name 
+        email
+        user name
+        password
+
+    1.3 log in page
+
+    1.4 footer
+
+2.Home page
+
+2.1 Header
+    left apple icon
+    current time
+    below it icon with postgram h1
+
+2.2 Body
+    Card
+        pofile photo - profile name
+        images...
+        like button
+        comment button
+        show comments
+
+2.3 footer
+    Home icon
+    search icon
+    profile icon
+    setting icon
+
+3. Search page
+
+    3.1 Header 
+
+    3.2 Search bar
+        search icon button
+
+    3.3 if result found
+        show Card
+        else no result found
+
+    3.4 footer
+
+4. profile page
+    profile photo
+    uploaded photos
+    upload photo 
+    delete photo
+
+5. setting page
+    
+    5.1 Theme
+        dark - light
+    5.2 log out
+    5.3 delete account
+        password to delete account
