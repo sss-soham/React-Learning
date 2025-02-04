@@ -1,14 +1,20 @@
 // import { EventHandling } from "./components/EventHandling";
-import { EventProps } from "./components/EventProps";
+//import { EventPropogation } from "./components/EventPropogation";
+// import { EventProps } from "./components/EventProps";
 //import NetflixCard from "./components/NetflixCard";
+
+import { IncrementNumber } from "./components/hooks/IncrementNumber";
+import "./components/EV.css"
 
 export default function App() {
   return (
-    <section>
+    <section className="container">
       {/* <NetflixCard />
       <h1>hi</h1> */}
       {/* <EventHandling /> */}
-      <EventProps />
+      {/* <EventProps /> */}
+      {/* <EventPropogation /> */}
+      <IncrementNumber/>
     </section>
   )
 }
