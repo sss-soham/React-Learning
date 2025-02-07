@@ -3,8 +3,10 @@
 // import { EventProps } from "./components/EventProps";
 //import NetflixCard from "./components/NetflixCard";
 
-import { IncrementNumber } from "./components/hooks/IncrementNumber";
+// import { IncrementNumber } from "./components/hooks/IncrementNumber";
 import "./components/EV.css"
+import { LiftingState } from "./components/LiftingStateUp"
+// import { DerivedState } from "./components/hooks/DerivedState"
 
 export default function App() {
   return (
@@ -14,7 +16,9 @@ export default function App() {
       {/* <EventHandling /> */}
       {/* <EventProps /> */}
       {/* <EventPropogation /> */}
-      <IncrementNumber/>
+      {/* <IncrementNumber/> */}
+      {/* <DerivedState/> */}
+      <LiftingState/>
     </section>
   )
 }
