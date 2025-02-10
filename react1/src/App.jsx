@@ -1,4 +1,4 @@
-import { ContactForm } from "./components/hooks/useState/ContactForm"
+import { HowNotToFetchApi } from "./components/hooks/useEffect/HowNotToFetchApi"
 
 export default function App() {
   return (
@@ -17,7 +17,11 @@ export default function App() {
       {/* <Counter/> */}
       {/* <RegistrationOptimised/> */}
       {/* <LoginForm/> */}
-      <ContactForm/>
+      {/* <ContactForm/> */}
+      {/* <ReactUseEffect/> */}
+      {/* <EffectChallenge/> */}
+      {/* <CleanUpFunction/> */}
+      <HowNotToFetchApi/>
     </section>
   )
 }
