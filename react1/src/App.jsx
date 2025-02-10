@@ -1,5 +1,4 @@
-import "./components/EV.css"
-import { Todo } from "./project/Todo/Todo"
+import { ContactForm } from "./components/hooks/useState/ContactForm"
 
 export default function App() {
   return (
@@ -13,7 +12,12 @@ export default function App() {
       {/* <DerivedState/> */}
       {/* <LiftingState/> */}
       {/* <ToggleSwitch/> */}
-      <Todo/>
+      {/* <Todo/> */}
+      {/* <ShortCircuit/> */}
+      {/* <Counter/> */}
+      {/* <RegistrationOptimised/> */}
+      {/* <LoginForm/> */}
+      <ContactForm/>
     </section>
   )
 }
