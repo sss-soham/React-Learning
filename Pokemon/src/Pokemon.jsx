@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Card } from "./Card";
+import "./index.css"
 
 const Pokemon = () => {
     const [pokemon, setPokemon] = useState([]);
@@ -8,7 +9,7 @@ const Pokemon = () => {
     const [error, setError] = useState(null);
     const [search, setSearch] = useState("");
 
-    const API = "https://pokeapi.co/api/v2/pokemon?limit=24";
+    const API = "https://pokeapi.co/api/v2/pokemon?limit=224";
 
     const fetchPokemon = async() => {
         try {
@@ -45,20 +46,24 @@ const Pokemon = () => {
     if(loading) return <h1>Loading ...</h1>;
 
     return (
-        <>
-            <h1>Let's Search Pokemon !</h1>
-            <div>
+        <section className="container">
+            <header>
+                <h1>Let's Search Pokemon !</h1>
+            </header>
+            <div className="pokemon-search">
                 <input type="text" 
-                value={search} 
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search Pokemon"/>
+                    value={search} 
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="Search Pokemon"/>
             </div>
-            <ul>
+            <div>
+                <ul className="cards">
                 {searchPokemon.map((curPokemon) => {
                     return <Card key={curPokemon.id} curPokemon={curPokemon}/>
                 })}            
-            </ul>
-        </>
+                </ul>
+            </div>           
+        </section>
     )
 };
 
