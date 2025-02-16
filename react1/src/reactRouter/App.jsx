@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./reactRouter/pages/Home";
-import { About } from "./reactRouter/pages/About";
-import { Movie } from "./reactRouter/pages/Movies";
-import { Contact } from "./reactRouter/pages/Contact";
-import AppLayout from "./reactRouter/layout/AppLayout";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Movie } from "./pages/Movies";
+import { Contact } from "./pages/Contact";
+import AppLayout from "./layout/AppLayout";
+import "./App.css"
+
 
 export default function App() {
     const router = createBrowserRouter([
@@ -20,7 +22,7 @@ export default function App() {
                     element: <About />,
                 },
                 {
-                    path: "/movies",
+                    path: "/movie",
                     element: <Movie />,
                 },
                 {
