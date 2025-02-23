@@ -5,11 +5,21 @@ const api = axios.create({
 })
 
 // get method
-export const getPost = async () => {
+export const getData = async () => {
     return await api.get("/posts");
 };
 
 // delete method
-export const deletePost = async (id) => {
+export const deleteData = async (id) => {
     return await api.delete(`/posts/${id}`)
+};
+
+// post method
+export const postData = (data) => {
+    return api.post("/posts", data);
+};
+
+// put method
+export const putData = async (id, data) => {
+    return await api.put(`/posts/${id}`, data);
 }
