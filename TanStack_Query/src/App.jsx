@@ -6,6 +6,7 @@ import { Home } from "./pages/Home";
 import { FetchOld } from "./pages/FetchOld";
 import { FetchRQ } from "./pages/FetchRQ";
 import "./App.css"
+import { FetchIND } from "./components/UI/FetchIND";
 
 
 // creating react router
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/rq",
                 element: <FetchRQ />,
+            },
+            {
+                path: "/rq/:id",
+                element: <FetchIND />,
             }
         ]
     }
