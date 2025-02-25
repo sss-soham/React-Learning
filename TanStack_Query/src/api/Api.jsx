@@ -20,4 +20,12 @@ export const fetchInvData = async(id) => {
     }
 };
 
-// pagination
+// delete post
+export const deletePost = (id) => {
+    return api.delete(`/posts/${id}`);
+};
+
+// update post
+export const updatePost = (id) => {
+    return api.patch(`/posts/${id}`, {title: "updated"});
+};

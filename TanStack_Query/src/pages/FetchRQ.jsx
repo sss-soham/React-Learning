@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { fetchData } from "../api/Api";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { deletePost, fetchData, updatePost } from "../api/Api";
+import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 
 export const FetchRQ =() => {
@@ -11,6 +11,31 @@ export const FetchRQ =() => {
         queryKey:["posts", page], //useState
         queryFn: () => fetchData(page), //useEffect
         placeholderData: keepPreviousData,
+    });
+
+    const queryClient = useQueryClient();
+
+    // mutation function to delete the post
+    const deleteMutation = useMutation({
+        mutationFn: (id) => deletePost(id),
+        onSuccess: (data, id) => {
+            queryClient.setQueryData(["posts", page], (cur) => {
+                return cur ?.filter((post) => post.id !== id);
+            })
+        }
+    });
+
+    const updateMutation = useMutation({
+        mutationFn: (id) => updatePost(id),
+        onSuccess: (apiData, postId) => {
+            queryClient.setQueryData(["posts", page], (postsData) => {
+                return postsData ?.map((curPost) => {
+                    return curPost.id === postId ? {...curPost, title: apiData.data.title}
+                    : curPost;
+                }
+                );
+            })
+        }
     });
 
     if(isPending) return <h1>Loading...</h1>
@@ -29,6 +54,14 @@ export const FetchRQ =() => {
                                     <p>{title}</p>
                                     <p>{body}</p>
                                 </NavLink>
+                                <button 
+                                onClick={() => deleteMutation.mutate(id)}
+                                >Delete
+                                </button>
+                                <button
+                                onClick={() => updateMutation.mutate(id)}>
+                                    Update
+                                </button>
                             </li>
                         )
                     })
