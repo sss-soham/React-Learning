@@ -7,6 +7,7 @@ import { FetchOld } from "./pages/FetchOld";
 import { FetchRQ } from "./pages/FetchRQ";
 import "./App.css"
 import { FetchIND } from "./components/UI/FetchIND";
+import { InfiniteScroll } from "./pages/InfiniteScroll";
 
 
 // creating react router
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/rq/:id",
                 element: <FetchIND />,
+            },
+            {
+                path:"/infinite",
+                element: <InfiniteScroll />
             }
         ]
     }
