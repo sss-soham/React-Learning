@@ -1,29 +1,34 @@
-import { useState } from "react";
 import { currencyConverter } from "./api/PostApi";
+import { useDispatch, useSelector } from "react-redux";
+import { setAmount, setFromCurrency, setToCurrency, setConvertedAmount, setLoading, setError } from "./store.jsx";
 
 const App = () => {
 
-	const [amount, setAmount] = useState(0);
-	const [fromCurrency, setFromCurrency] = useState("USD");
-	const [toCurrency, setToCurrency] = useState("INR");
-	const [convertedAmount, setConvertedAmount] = useState(null);
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(null);
+	// using normal react- state management.
+	// const [amount, setAmount] = useState(0);
+	// const [fromCurrency, setFromCurrency] = useState("USD");
+	// const [toCurrency, setToCurrency] = useState("INR");
+	// const [convertedAmount, setConvertedAmount] = useState(null);
+	// const [loading, setLoading] = useState(false);
+	// const [error, setError] = useState(null);
+
+	const { amount, fromCurrency, toCurrency, convertedAmount, loading, error } = useSelector((state) => state);
+	const dispatch = useDispatch();
 
 	const handleConvertCurrenct = async () => {
-		setLoading(true);
-		setError(null);
+		dispatch(setLoading(true));
+		dispatch(setError(null));
 		try {
 			const res = await currencyConverter(fromCurrency, toCurrency, amount);
 			const { conversion_result } = await res.data;
-			setLoading(false);
-			setConvertedAmount(conversion_result);
+			dispatch(setLoading(false));
+			dispatch(setConvertedAmount(conversion_result));
 			console.log(conversion_result);
 		}catch(error) {
-			setError("Error fetching conversion rate");
+			dispatch(setError("Error fetching conversion rate"));
 			console.log(error);
 		}
-	}
+	};
 
 	return(
 		<section className="currency-converter">
@@ -32,7 +37,7 @@ const App = () => {
 				<div>
 					<label htmlFor="currency_amount">Amount:
 						<input type="number" id="currency_amount" value={amount} 
-						onChange={(e) => setAmount(e.target.value)}/>
+						onChange={(e) => dispatch(setAmount(e.target.value))}/>
 					</label>
 				</div>
 				<div className="currency-selector">
@@ -40,7 +45,7 @@ const App = () => {
 						<label>
 							From:
 							<select value={fromCurrency} 
-							onChange={(e) => setFromCurrency(e.target.value)}>
+							onChange={(e) => dispatch(setFromCurrency(e.target.value))}>
 								<option value="USD">USD</option>
 								<option value="EUR">EUR</option>
 								<option value="INR">INR</option>
@@ -55,7 +60,7 @@ const App = () => {
 							To:
 							<select
 							value={toCurrency}
-							onChange={(e) => setToCurrency(e.target.value)}>
+							onChange={(e) => dispatch(setToCurrency(e.target.value))}>
 								<option value="INR">INR</option>
 								<option value="USD">USD</option>
 								<option value="EUR">EUR</option>
