@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { addTask, deleteTask, fetchTask } from "../store";
+import { addTask, deleteTask, clearTask } from "../features/tasks/taskSlice.jsx";
 
 export const Todo = () => {
 
 	const [task , setTask] = useState("");
 
-	const store = useSelector((state) => state.task);
+	const store = useSelector((state) => state.taskReducer.task);
 	// console.log("react states: ", store.task);
 
 	const dispatch = useDispatch();
@@ -21,9 +21,9 @@ export const Todo = () => {
 		return dispatch(deleteTask(id));
 	};
 
-	const handleFetchTask = () => {
-		dispatch(fetchTask());
-	}
+	// const handleFetchTask = () => {
+	// 	dispatch(fetchTask());
+	// }
 
 	return(
 		<div>
@@ -40,10 +40,10 @@ export const Todo = () => {
 					</form>
 				</div>
 
-				<button onClick={handleFetchTask}>Fetch Task</button>
+				{/* <button onClick={handleFetchTask}>Fetch Task</button> */}
 
 				<ul>
-					{store.map((curTask, index) => {
+					{store?.map((curTask, index) => {
 							return <li key={index}>
 								<p>{index} : {curTask}</p>
 								<button
@@ -54,7 +54,13 @@ export const Todo = () => {
 						})
 					}
 				</ul>
+				<div>
+					<button
+					onClick={() => dispatch(clearTask())}>Clear all</button>
+				</div>
 			</div>
 		</div>
 	)
 }
+
+console.log("Hi")
